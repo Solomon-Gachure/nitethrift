@@ -8,31 +8,29 @@ const Navbar = () => {
 
   return (
     <div className='max-w-[1400px] h-screen bg-cyan-950'>
-        <div className='flex w-full px-2 pt-2 justify-between  items-center'>
-            <div className='' onClick={handleNav}>
-                {nav?<AiOutlineClose size={30} className=' font-bold text-white cursor-pointer  '/>:<AiOutlineMenu size={30} className=' font-bold text-white cursor-pointer '/>}
+        <div className='flex justify-between p-4 items-center'>
+            <div className='cursor-pointer md:hidden' onClick={handleNav} >
+                {nav?<AiOutlineClose  className='font-bold text-white z-10' size={30}/>: <AiOutlineMenu  className='font-bold text-white' size={30}/>}
+               
                 
-            </div>
-            <div>
-                <h3 className='text-2xl md:text-3xl font-bold text-orange-500'>Murang'a Shuttle</h3>
-            </div>
-            <div >
-                <ul className='hidden text-white md:flex gap-4'>
-                    <li className='md:text-2xl cursor-pointer'>Home</li>
-                    <li className='md:text-2xl cursor-pointer'>About</li>
-                    <li className='md:text-2xl cursor-pointer'>Book</li>
-                    <li className='md:text-2xl cursor-pointer'>Parcel</li>
-                    <li className='md:text-2xl cursor-pointer'>Contact</li>
-
-                    </ul>
             </div>
             
-        </div>
-        
-        <div className={!nav ? 'hidden top-0 left-0 ease-in-out duration-500 bg-black h-screen w-[50px]':'left-[-100%]'}>
-                
-                <ul className=' text-white font-bold text-2xl bg-black w-[300px] h-screen top-0 left-0 flex flex-col px-2'>
-                    <li>Home</li>
+            <div className={nav ? ' fixed top-0 right-0 text-2xl bg-cyan-800 border-r border-gray-600 h-full w-[60%] md:w-[20%] px-4  pt-24 text-white':'fixed hidden right-[-100]'}>
+               
+                <ul className='p-4'>
+                    <li className='p-4'>Home</li> 
+                    <li className='p-4'>About</li>
+                    <li className='p-4'>Book</li>
+                    <li className='p-4'>Parcel</li>
+                    <li className='p-4'>Contact</li>
+
+                </ul>
+            </div>
+            
+            <h3 className='text-4xl md:text-4xl font-bold text-amber-400'>MATATU APP</h3>
+            <div >
+                <ul className='hidden md:flex gap-6 text-2xl text-white'>
+                    <li>Home</li> 
                     <li>About</li>
                     <li>Book</li>
                     <li>Parcel</li>
@@ -40,6 +38,7 @@ const Navbar = () => {
 
                 </ul>
             </div>
+        </div>
     </div>
   )
 }
